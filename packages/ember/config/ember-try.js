@@ -1,7 +1,7 @@
 'use strict';
 
 const getChannelURL = require('ember-source-channel-url');
-const { embroiderSafe } = require('@embroider/test-setup');
+const { embroiderSafe, embroiderOptimized } = require('@embroider/test-setup');
 
 /**
  * Pick which versions of ember against which to test based on whether the tests are running locally, as part of a PR,
@@ -35,6 +35,7 @@ module.exports = async function () {
         },
       },
       embroiderSafe(),
+      embroiderOptimized(),
     ]);
     scenarios = scenarios.concat([
       {
